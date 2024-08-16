@@ -1,0 +1,62 @@
+.tariff-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+  
+      th, td {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: left;
+      }
+  
+      th {
+        background-color: #f4f4f4;
+      }
+    }
+  
+    button {
+      align-self: flex-end;
+    }
+  
+    .tariff-item {
+      flex: 1 1 calc(33% - 1rem);
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 4px;
+      background-color: #f9f9f9;
+  
+      h3 {
+        margin-top: 0;
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .tariff-item {
+        flex: 1 1 calc(50% - 1rem);
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .tariff-item {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  .sort-control {
+    margin-bottom: 1rem;
+  
+    label {
+      margin-right: 0.5rem;
+    }
+  
+    select {
+      padding: 0.25rem;
+      font-size: 1rem;
+    }
+  }
+  

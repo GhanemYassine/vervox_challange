@@ -1,0 +1,11 @@
+<div class="comparison-list" *ngIf="comparisonList.length > 0">
+    <h2>Comparison List</h2>
+    <div *ngFor="let tariff of comparisonList" class="tariff-item">
+      <h3>{{ tariff.name }}</h3>
+      <p><strong>Price:</strong> {{ tariff.price }} €/kWh</p>
+      <p><strong>Supplier:</strong> {{ tariff.supplier }}</p>
+      <p>{{ tariff.description }}</p>
+      <button (click)="removeFromCompare(tariff)">Remove</button>
+    </div>
+  </div>
+  

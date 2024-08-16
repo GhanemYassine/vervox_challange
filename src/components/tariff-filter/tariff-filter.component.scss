@@ -1,0 +1,25 @@
+.tariff-list {
+    display: flex;
+    flex-wrap: wrap;
+  
+    .tariff-item {
+      flex: 1 1 calc(33% - 1rem);
+      margin: 0.5rem;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      border-radius: 4px;
+    }
+  
+    @media (max-width: 768px) {
+      .tariff-item {
+        flex: 1 1 calc(50% - 1rem);
+      }
+    }
+  
+    @media (max-width: 480px) {
+      .tariff-item {
+        flex: 1 1 100%;
+      }
+    }
+  }
+  

@@ -1,1 +1,63 @@
-/* You can add global styles to this file, and also import other style files */
+// src/styles.scss
+
+/* Global Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    /* Styles for tablets and mobile devices */
+    button {
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+    .tariff-list, .comparison-page {
+      padding: 10px;
+      margin: 0;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    table {
+      width: 100%;
+      font-size: 0.9rem;
+    }
+  
+    .tariff-list button, .comparison-page button {
+      width: 100%;
+      padding: 10px;
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    /* Styles for desktop and larger screens */
+    .tariff-list, .comparison-page {
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    table {
+      width: 100%;
+      font-size: 1rem;
+    }
+  
+    .tariff-list button, .comparison-page button {
+      width: auto;
+      padding: 15px;
+      font-size: 1rem;
+    }
+  }
+  

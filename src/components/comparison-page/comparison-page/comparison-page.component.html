@@ -1,0 +1,29 @@
+<!-- src/app/components/comparison-page/comparison-page.component.html -->
+<div class="comparison-page" *ngIf="comparisonList.length > 0">
+    <button routerLink="/">
+        Back to Tariff List
+      </button>
+    <h2>Compare Tariffs</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Tariff Name</th>
+          <th>Price (€/kWh)</th>
+          <th>Supplier</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tariff of comparisonList">
+          <td>{{ tariff.name }}</td>
+          <td>{{ tariff.price }}</td>
+          <td>{{ tariff.supplier }}</td>
+          <td>{{ tariff.description }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="comparisonList.length === 0">
+    <p>No tariffs selected for comparison.</p>
+  </div>
+  

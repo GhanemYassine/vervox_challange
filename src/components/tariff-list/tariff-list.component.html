@@ -1,0 +1,30 @@
+<div class="sort-control">
+  <label for="sortOrder">Sort by Price:</label>
+  <select id="sortOrder" (change)="sortTariffs($event)">
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+  </select>
+</div>
+
+<button routerLink="/comparison" [disabled]="!(comparisonList$ | async)?.length">
+  Compare Selected Tariffs
+</button>
+<div *ngIf="tariffs$ | async as tariffs; else loading">
+    <div *ngFor="let tariff of tariffs">
+      {{ tariff.name }} - {{ tariff.price }}
+    </div>
+    <div *ngFor="let tariff of tariffs" class="tariff-item">
+      <h3>{{ tariff.name }}</h3>
+      <p><strong>Price:</strong> {{ tariff.price }} €/kWh</p>
+      <p><strong>Supplier:</strong> {{ tariff.supplier }}</p>
+      <p>{{ tariff.description }}</p>
+      <button 
+        (click)="addToCompare(tariff)" 
+        [disabled]="isInComparisonList(tariff) || comparisonList.length >= 3">
+        {{ isInComparisonList(tariff) ? 'Added' : 'Add to Compare' }}
+      </button>
+    </div>
+  </div>
+  <ng-template #loading>
+    Loading...
+  </ng-template>
