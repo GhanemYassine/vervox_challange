@@ -22,6 +22,21 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## Docker Instructions
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Build the Docker Image
+
+To build the Docker image for the application, run the following command in the root directory of the project:
+
+
+docker build -t my-angular-app .
+
+## To run the application inside a Docker container, use the following command:
+
+docker run -d -p 8080:80 my-angular-app
+
+The application will be available at http://localhost:8080.
+
+
+
+
